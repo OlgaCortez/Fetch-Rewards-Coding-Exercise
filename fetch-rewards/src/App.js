@@ -35,6 +35,7 @@ function App() {
 
   const allGroups = [];
   allGroups.push(...groupOne, ...groupTwo, ...groupThree, ...groupFour);
+  const sorted = allGroups.sort((a, b) => (a.name > b.name) ? 1 : -1 ? ((a.listId > b.listId) ? 1 : -1) : -1);
 
   return (
     <div className="App">
@@ -47,7 +48,7 @@ function App() {
       </div>
       <div className="final">
         <h1>Sorted Results by ListId and Name</h1>
-        {allGroups.map(result => {
+        {sorted.map(result => {
         return <ul><li>ListId: {result.listId}</li><li>Name: {result.name}</li></ul>
         })}
       </div> 
